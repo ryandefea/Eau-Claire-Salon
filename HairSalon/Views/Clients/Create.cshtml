@@ -2,9 +2,9 @@
   Layout = "_Layout";
 }
 
-@model BestRestaurants.Models.Restaurant
+@model HairSalon.Models.Client
 
-<h4>Add a new restaurants</h4>
+<h4>Add a new client</h4>
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Name)
@@ -12,10 +12,10 @@
   @Html.LabelFor(model => model.Description)
   @Html.TextBoxFor(model => model.Description)
 
-  @Html.HiddenFor(model => model.RestaurantId)
+  @Html.HiddenFor(model => model.ClientId)
 
-  @Html.LabelFor(model => model.Category)
-  @Html.DropDownList("CategoryId")
+  @Html.LabelFor(model => model.Stylist)
+  @Html.DropDownList("StylistId")
 
   <input type="submit" value="Add new example" />
 }
