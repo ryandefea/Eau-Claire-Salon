@@ -2,16 +2,16 @@
   Layout = "_Layout";
 }
 
-@model BestRestaurants.Models.Category
+@model HairSalon.Models.Stylist
 
 <h2>Edit</h2>
 
-<h4>Edit this category: @Html.DisplayFor(model => model.Name)</h4>
-<p>@Html.ActionLink("Add Restaurant", "Create", "Restaurants")</p>
+<h4>Edit this stylist: @Html.DisplayFor(model => model.Name)</h4>
+<p>@Html.ActionLink("Add Client", "Create", "Clients")</p>
 
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.CategoryId)
+  @Html.HiddenFor(model => model.StylistId)
 
   @Html.LabelFor(model => model.Name)
   @Html.EditorFor(model => model.Name)
