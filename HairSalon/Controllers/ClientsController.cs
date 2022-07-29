@@ -19,13 +19,13 @@ namespace HairSalon.Controllers
 
     public ActionResult Index()
     {
-      List<Client> model = _db.Clients.Include(client => client.Cuisine).ToList();
+      List<Client> model = _db.Clients.Include(client => client.Stylist).ToList();
       return View(model);
     }
 
     public ActionResult Create()
     {
-      ViewBag.CuisineId = new SelectList(_db.Stylists, "CuisineId", "Name");
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
       return View();
     }
 
@@ -46,7 +46,7 @@ namespace HairSalon.Controllers
     public ActionResult Edit(int id)
     {
       Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
-      ViewBag.CuisineId = new SelectList(_db.Stylists, "CuisineId", "Name");
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
       return View(thisClient);
     }
     
@@ -82,7 +82,7 @@ namespace HairSalon.Controllers
     [HttpPost]
     public ActionResult ShowSearch(string searchProperty, string searchPhrase)
     {
-        List<Client> model = _db.Clients.Where(p => p.Name.ToLower().Contains(searchPhrase.ToLower()) || p.Description.ToLower().Contains(searchPhrase.ToLower()) || p.Cuisine.Name.ToLower().Contains(searchPhrase.ToLower())).ToList(); 
+        List<Client> model = _db.Clients.Where(p => p.Name.ToLower().Contains(searchPhrase.ToLower()) || p.Description.ToLower().Contains(searchPhrase.ToLower()) || p.Stylist.Name.ToLower().Contains(searchPhrase.ToLower())).ToList(); 
         return View("Index", model);
     }
   }
