@@ -2,18 +2,18 @@
   Layout = "_Layout";
 }
 
-@using BestRestaurants.Models;
-@model List<BestRestaurants.Models.Restaurant>;
+@using HairSalon.Models;
+@model List<HairSalon.Models.Client>;
 
-<h1>Restaurants</h1>
+<h1>Clients</h1>
 
 <ul>
-  @foreach (Restaurant restaurant in Model)
+  @foreach (Client client in Model)
   {
-    <li>@Html.ActionLink($"{restaurant.Name}", "Details", new { id = restaurant.RestaurantId }) | @restaurant.Category.Name
+    <li>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId }) | @client.Category.Name
   </li>
   }
 </ul>
 
-<p>@Html.ActionLink("See all categories", "Index", "Categories")</p>
+<p>@Html.ActionLink("See all stylists", "Index", "Stylists")</p>
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
