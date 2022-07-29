@@ -2,10 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System;
-using BestRestaurants.Models;
+using HairSalon.Models;
 using System.Linq;
 
-namespace BestRestaurants.Controllers
+namespace HairSalon.Controllers
 {
   public class HomeController : Controller
   {

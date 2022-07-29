@@ -2,22 +2,22 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
-using BestRestaurants.Models;
+using HairSalon.Models;
 
-namespace BestRestaurants.Controllers
+namespace HairSalon.Controllers
 {
-  public class CategoriesController : Controller
+  public class StylistsController : Controller
   {
-    private readonly BestRestaurantsContext _db;
+    private readonly HairSalonContext _db;
 
-    public CategoriesController(BestRestaurantsContext db)
+    public StylistsController(HairSalonContext db)
     {
       _db = db;
     }
 
     public ActionResult Index()
     {
-      List<Category> model = _db.Categories.ToList();
+      List<Stylist> model = _db.Stylists.ToList();
       return View(model);
     }
 
@@ -27,29 +27,29 @@ namespace BestRestaurants.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Category category)
+    public ActionResult Create(Stylist stylist)
     {
-      _db.Categories.Add(category);
+      _db.Stylists.Add(stylist);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
     {
-      Category thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-      return View(thisCategory);
+      Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(thisStylist);
     }
 
     public ActionResult Edit(int id)
     {
-      var thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-      return View(thisCategory);
+      var thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(thisStylist);
     }
 
     [HttpPost]
-    public ActionResult Edit(Category category)
+    public ActionResult Edit(Stylist stylist)
     {
-      _db.Entry(category).State = EntityState.Modified;
+      _db.Entry(stylist).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
