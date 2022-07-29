@@ -1,16 +1,16 @@
 using System.Collections.Generic;
 
-namespace BestRestaurants.Models
+namespace HairSalon.Models
 {
-  public class Category
+  public class Stylist
   {
-    public Category()
+    public Stylist()
     {
-      this.Restaurants = new HashSet<Restaurant>();
+      this.Clients = new HashSet<Restaurant>();
     }
 
-    public int CategoryId { get; set; }
+    public int StylistId { get; set; }
     public string Name { get; set; }
-    public virtual ICollection<Restaurant> Restaurants { get; set; }
+    public virtual ICollection<Restaurant> Clients { get; set; }
   }
 }
