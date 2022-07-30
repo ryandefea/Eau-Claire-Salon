@@ -1,0 +1,41 @@
+h1 {
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+h2 {
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+h3 {
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+h4 {
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+p {
+  color: white;
+}
+
+body {
+  margin-top: 200px;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: left;
+  font-family: "Roboto", sans-serif;
+  background-color: #4e5a9d41;
+  padding: 35px;
+  border-radius: 10px;
+  border-color: #505c9b41;
+  border-style: outset;
+  border-width: 10px;
+}
