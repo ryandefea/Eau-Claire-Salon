@@ -89,7 +89,7 @@ Run ```$ dotnet watch run``` in the console
 </details>
 <br>
 
-This program was built using *`Microsoft .NET SDK 5.0.401`*, and may not be compatible with other versions. Your milage may vary.
+This program was built using *`Microsoft .NET SDK 5.0.401`*, and may not be compatible with other versions. 
 
 ---
 ## Known Bugs
